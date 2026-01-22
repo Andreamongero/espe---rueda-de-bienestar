@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ESPE — Rueda de Bienestar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ea2a33",
+                        "background-dark": "#000000",
+                        "surface-dark": "#161616",
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "Poppins", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-black text-white antialiased selection:bg-primary selection:text-white; }
+        }
+        .glass-satin-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.05);
+            position: relative; overflow: hidden;
+        }
+        .area-card { @apply flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 transition-all w-full; }
+        .area-card.active { @apply active:scale-[0.98] cursor-pointer; }
+        .area-card.completed { @apply opacity-100; }
+        .area-card.locked { @apply opacity-50 grayscale-[0.6] cursor-default pointer-events-none; }
+        
+        .progress-fill-premium {
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 100%), #ea2a33;
+            box-shadow: inset 0 1px 3px rgba(255,255,255,0.4), 0 0 15px rgba(234,42,51,0.8);
+        }
+
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            width: 24px; height: 24px;
+            background: #ea2a33; border-radius: 50%; cursor: pointer;
+            box-shadow: 0 0 10px rgba(234,42,51,0.6); border: 2px solid white;
+        }
+        .custom-slider::-moz-range-thumb {
+            width: 24px; height: 24px;
+            background: #ea2a33; border-radius: 50%; cursor: pointer;
+            box-shadow: 0 0 10px rgba(234,42,51,0.6); border: 2px solid white;
+        }
+
+        /* Prevent layout shift on mobile */
+        body { min-height: 100dvh; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
